@@ -12,6 +12,7 @@ class Register extends Component {
             firstname: '',
             lastname: '',
             age: '',
+            address: '',
             mobile: '',
             date: '',
             email: '',
@@ -32,6 +33,7 @@ class Register extends Component {
             firstname: this.state.firstname,
             lastname: this.state.lastname,
             age: this.state.age,
+            address: this.state.address,
             mobile: this.state.mobile,
             date: this.state.date,
             email: this.state.email,
@@ -41,10 +43,7 @@ class Register extends Component {
             AB: ["A", "O", "AB", "B"].indexOf(this.state.blood) !== -1 ? true : null,
             B: ["B", "O"].indexOf(this.state.blood) !== -1 ? true : null,
             O: ["O"].indexOf(this.state.blood) !== -1 ? true : null,
-            AO: ["A", "O"].indexOf(this.state.blood) !== -1 ? true : null,
-            BA: ["A", "O", "AB", "B"].indexOf(this.state.blood) !== -1 ? true : null,
-            BO: ["B", "O"].indexOf(this.state.blood) !== -1 ? true : null,
-            OO: ["O"].indexOf(this.state.blood) !== -1 ? true : null}
+            }
         FirebaseService.customAuth(newUser).then((user) => {
             multipath[`users/${user.uid}`] = newUser;
             FirebaseService.saveMultipath(multipath)

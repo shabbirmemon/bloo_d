@@ -28,7 +28,7 @@ class Login extends Component {
                 localStorage.setItem('currentUser', user.uid);
                 this.context.router.push({
                     pathname: '/donorList',
-                    // state: this.props.user
+                    
                 })
             })
             .catch((error) => alert(error.message))

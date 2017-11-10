@@ -18,7 +18,7 @@ class Donors extends Component {
         e.preventDefault()
         let ref = FirebaseService.ref.child("/users");
         _self.arr = [];
-        ref.orderByChild(this.refs.demo.value).equalTo(true).once('value', function (snapshot) {
+        ref.orderByChild(this.refs.blood.value).equalTo(true).once('value', function (snapshot) {
             snapshot.forEach(childSnapshot => {
                 _self.arr.push(childSnapshot.val())
             })
@@ -51,8 +51,8 @@ logOut(){
         }
 
         const table = {
-  height: 290,
-  width: 400,
+  height: 340,
+  width: 430,
   margin: 20,
   padding: 20,
   textAlign: 'center',
@@ -69,16 +69,12 @@ logOut(){
                 <form onSubmit={this.onSearch}>
                     <select style={style}
                         required
-                        ref="demo">
+                        ref="blood">
                         <option>Blood Type   </option>
-                        <option value="A">A+   </option>
-                        <option value="B">B+   </option>
-                        <option value="O">O+   </option>
-                        <option value="AB">AB+</option>
-                        <option value="A-">A-   </option>
-                        <option value="B-">B-   </option>
-                        <option value="O-">O-   </option>
-                        <option value="AB-">AB-</option>
+                        <option value="A">A   </option>
+                        <option value="B">B   </option>
+                        <option value="O">O   </option>
+                        <option value="AB">AB </option>
                     </select>
                     <br />
                     <RaisedButton label="Check" type="submit" primary={true} style={btn} />
@@ -107,6 +103,12 @@ logOut(){
                                 <th>Age</th>
                                 <td>
                             {v.age} </td>
+                            </tr>
+                            <hr/>
+                            <tr>
+                                <th>Address</th>
+                                <td>
+                            {v.address} </td>
                             </tr>
                             <hr/>
                             <tr>

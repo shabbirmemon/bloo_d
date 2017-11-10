@@ -28,23 +28,14 @@ export class FirebaseService {
 
     static customLogin(user) {
         return this.auth.signInWithEmailAndPassword(user.email, user.pass);
-    } //loginUser
+    } 
 
     static addNewUser(user) {
         return this.ref.child(user).set();
-    } //AuthNewUser
+    } 
 
     static getPushRef(path) {
         return this.ref.child(path).push();
     }
-    // static uploadImageOnStorageBlob(path, blob) {
-    //     return new Promise(res => {
-    //         this.storage.child(path).put(blob).then((snapshot) => {
-    //             console.log('Uploaded a blob or file!');
-    //             // The promise will resolve with a Download URL provided by Firebase Storage
-    //             res(snapshot.downloadURL);
-    //         })
-    //     });
-    // }
-
+    
 }

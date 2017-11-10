@@ -48,6 +48,13 @@ export class SignupComponent extends React.Component {
                         onChange={this.props._inputHandler}
                         /><br />
 
+                        <TextField
+                        hintText="Address"
+                        name="address"
+                        value={this.props.signUpState.address}
+                        required fullWidth
+                        onChange={this.props._inputHandler}
+                        /><br />
                     <TextField
                         type="number"
                         hintText="Mobile"

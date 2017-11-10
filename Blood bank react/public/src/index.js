@@ -10,8 +10,6 @@ import NestedAbout from './components/aboutnestedroute';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
-// import Nav from './components/nav.js';
-// import ReactRouter from 'react-router';
 import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 
 ReactDOM.render((
